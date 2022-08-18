@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<%- include('./header') %>
+
+    <title>card</title>
+</head>
+<body>
+    <%- include('./navbar.ejs') %>
+
+    <h1 class="center">Test</h1>
+
+    <p>
+        
+    <% for (let i = 0; i< users.length; i++){ %>
+    <div class="container">
+        <div class="card" style="width: 20rem;">
+            <ul class="list-group list-group-flush">
+                <p> <%= users[i].name %> </p>
+            </ul>
+            <p> <%= users[i].username %> </p>
+            <p> <%= users[i].email %> </p>
+            <p> <%= users[i].address.street %> </p>
+            <p> <%= users[i].address.suite %> </p>
+            <p> <%= users[i].address.city %> </p>
+            <a href="/user/cardDetail/<%= users[i] %>"> Détail</a>
+            <a href="/user/card/<%= users[i].id %>"> Supprimer </a>
+            <a href="/user/card/<%= users[i].id %>"> Créer </a>
+        </div>
+        
+    </div>
+        
+       
+
+   <% } %>
+
+    </p>
+
+
+    
+</body>
